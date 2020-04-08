@@ -3,6 +3,7 @@ autoUpdate:
   schedule: ""
 bootConfigURL: https://github.com/cb-kubecd/environment-bootv3-staging.git
 cluster:
+  clusterName: bootv3-staging
   devEnvApprovers:
   - jstrachan
   - rawlingsj
@@ -13,7 +14,10 @@ cluster:
   gitName: github
   gitServer: https://github.com
   namespace: jx-staging
+  project: jstrachan-multicluster
   provider: gke
+  registry: gcr.io
+  zone: europe-west1-d
 environments:
 - gitKind: github
   gitServer: https://github.com
