@@ -1,0 +1,67 @@
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-st-p75hx-2[0m stage [32mrelease[0m and container [32mstep-credential-initializer-pzd2n[0m
+{"level":"warn","ts":1586350487.773078,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1586350487.7735972,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-st-p75hx-2[0m stage [32mrelease[0m and container [32mstep-working-dir-initializer-vp9rl[0m
+{"level":"warn","ts":1586350488.7074678,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1586350488.7088625,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-st-p75hx-2[0m stage [32mrelease[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-st-p75hx-2[0m stage [32mrelease[0m and container [32mstep-git-source-cb-kubecd-environment-bootv3-st-p75hx-dlx6q[0m
+{"level":"warn","ts":1586350496.87785,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1586350497.8839726,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/cb-kubecd/environment-bootv3-staging.git @ v0.0.2 in path /workspace/source"}
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-st-p75hx-2[0m stage [32mrelease[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:cfa022b88654b563ff8beac8450a6c1cfcb7a14b
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-st-p75hx-2[0m stage [32mrelease[0m and container [32mstep-verify-secrets[0m
+created directory /secrets/**-boot
+loaded Secrets from: local in namespace ** with Secret **-boot-secrets
+exported Secrets to file: /secrets/**-boot/secrets.yaml
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-st-p75hx-2[0m stage [32mrelease[0m and container [32mstep-validate-git[0m
+Git configured for user: jenkins-x-bot and email jenkins-x@googlegroups.com
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-st-p75hx-2[0m stage [32mrelease[0m and container [32mstep-verify-preinstall[0m
+no need to reconnect to cluster
+writing the following to the OWNERS file for the development environment repository:
+approvers:
+- jstrachan
+- rawlingsj
+- daveconde
+reviewers:
+- jstrachan
+- rawlingsj
+- daveconde
+WARNING: TLS is not enabled so your webhooks will be called using HTTP. This means your webhook secret will be sent to your cluster in the clear. See https://jenkins-x.io/docs/getting-started/setup/boot/#ingress for more information
+Verifying the kubernetes cluster before we try to boot Jenkins X in namespace: **-staging
+Trying to lazily create any missing resources to get the current cluster ready to boot Jenkins X
+Verifying Ingress...
+Clearing the domain 35.189.205.219.nip.io as when using auto-DNS domains we need to regenerate to ensure its always accurate in case the cluster or ingress service is recreated
+
+WARNING: there is no context defined in your Kubernetes configuration - we may be inside a test case or pod?
+No kube context - probably in a unit test or pod?
+
+Verifying Storage...
+WARNING: Your requirements have not enabled cloud storage for logs - we recommend enabling this for kubernetes provider gke
+WARNING: Your requirements have not enabled cloud storage for reports - we recommend enabling this for kubernetes provider gke
+WARNING: Your requirements have not enabled cloud storage for repository - we recommend enabling this for kubernetes provider gke
+WARNING: Your requirements have not enabled cloud storage for backup - we recommend enabling this for kubernetes provider gke
+Storage configuration looks good
+
+Validating Kaniko secret in namespace **-staging
+attempting to lazily create the deploy namespace **-staging
+Configuring Kaniko service account bootv3-staging-ko for project jstrachan-multicluster
+Service Account exists
+Downloading service account key
+Exceeds the maximum number of keys on service account bootv3-staging-ko
+Cleaning up the keys of the service account bootv3-staging-ko
+Cannot delete the key 51ced5ae332ec2e5dfc259f00c9bbda1f914a451 from service account bootv3-staging-ko: deleting the key '51ced5ae332ec2e5dfc259f00c9bbda1f914a451'from service account 'bootv3-staging-ko@jstrachan-multicluster.iam.gserviceaccount.com': failed to run 'gcloud iam service-accounts keys delete 51ced5ae332ec2e5dfc259f00c9bbda1f914a451 --iam-account bootv3-staging-ko@jstrachan-multicluster.iam.gserviceaccount.com --project jstrachan-multicluster --quiet' command in directory '', output: 'ERROR: (gcloud.iam.service-accounts.keys.delete) PERMISSION_DENIED: Permission iam.serviceAccountKeys.delete is required to perform this operation on service account key projects/-/serviceAccounts/bootv3-staging-ko@jstrachan-multicluster.iam.gserviceaccount.com/keys/51ced5ae332ec2e5dfc259f00c9bbda1f914a451.'
+Cannot delete the key 158a219bc96f76aa2abb4551b4eba8c95b4da938 from service account bootv3-staging-ko: deleting the key '158a219bc96f76aa2abb4551b4eba8c95b4da938'from service account 'bootv3-staging-ko@jstrachan-multicluster.iam.gserviceaccount.com': failed to run 'gcloud iam service-accounts keys delete 158a219bc96f76aa2abb4551b4eba8c95b4da938 --iam-account bootv3-staging-ko@jstrachan-multicluster.iam.gserviceaccount.com --project jstrachan-multicluster --quiet' command in directory '', output: 'ERROR: (gcloud.iam.service-accounts.keys.delete) PERMISSION_DENIED: Permission iam.serviceAccountKeys.delete is required to perform this operation on service account key projects/-/serviceAccounts/bootv3-staging-ko@jstrachan-multicluster.iam.gserviceaccount.com/keys/158a219bc96f76aa2abb4551b4eba8c95b4da938.'
+Cannot delete the key 215060b750ca205ee951502bfe8ce101c43ad08f from service account bootv3-staging-ko: deleting the key '215060b750ca205ee951502bfe8ce101c43ad08f'from service account 'bootv3-staging-ko@jstrachan-multicluster.iam.gserviceaccount.com': failed to run 'gcloud iam service-accounts keys delete 215060b750ca205ee951502bfe8ce101c43ad08f --iam-account bootv3-staging-ko@jstrachan-multicluster.iam.gserviceaccount.com --project jstrachan-multicluster --quiet' command in directory '', output: 'ERROR: (gcloud.iam.service-accounts.keys.delete) PERMISSION_DENIED: Permission iam.serviceAccountKeys.delete is required to perform this operation on service account key projects/-/serviceAccounts/bootv3-staging-ko@jstrachan-multicluster.iam.gserviceaccount.com/keys/215060b750ca205ee951502bfe8ce101c43ad08f.'
+error: failed to lazily create the kaniko secret in: **-staging: creating the service account: creating service account key: creating a new service account key: failed to run 'gcloud iam service-accounts keys create /tmp/gke834746619/bootv3-staging-ko.key.json --iam-account bootv3-staging-ko@jstrachan-multicluster.iam.gserviceaccount.com --project jstrachan-multicluster' command in directory '', output: 'ERROR: (gcloud.iam.service-accounts.keys.create) PERMISSION_DENIED: Permission iam.serviceAccountKeys.create is required to perform this operation on service account projects/-/serviceAccounts/bootv3-staging-ko@jstrachan-multicluster.iam.gserviceaccount.com.'
+[31m
+Pipeline failed on stage 'release' : container 'step-verify-preinstall'. The execution of the pipeline has stopped.[0m
