@@ -9,7 +9,6 @@ cluster:
   - rawlingsj
   - daveconde
   environmentGitOwner: cb-kubecd
-  environmentGitPublic: true
   gitKind: github
   gitName: github
   gitServer: https://github.com
@@ -46,7 +45,7 @@ ingress:
     production: false
 kaniko: true
 repository: nexus
-secretStorage: local
+secretStorage: vault
 storage:
   backup:
     enabled: false
@@ -62,8 +61,8 @@ storage:
     url: ""
 vault: {}
 velero:
-  schedule: ""
-  ttl: ""
+  schedule: 0 * * * *
+  ttl: 720h0m0s
 versionStream:
   ref: v2.0.124
   url: https://github.com/jenkins-x-labs/jenkins-x-versions.git
