@@ -4,7 +4,7 @@ apps:
 - name: jenkins-x/lighthouse
 - name: jenkins-x/tekton
 - name: dev/v2-nodey
-  version: 0.0.7
+  version: 0.0.6
 repositories:
 - name: dev
   url: http://chartmuseum-jx.35.205.96.40.nip.io
