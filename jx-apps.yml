@@ -5,6 +5,8 @@ apps:
 - name: jenkins-x/tekton
 - name: dev/v2-nodey
   version: 0.0.8
+- name: dev/v2-nodey3
+  version: 0.0.2
 repositories:
 - name: dev
   url: http://chartmuseum-jx.35.205.96.40.nip.io
