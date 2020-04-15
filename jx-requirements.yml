@@ -1,1 +1,62 @@
+autoUpdate:
+  enabled: false
+  schedule: ""
+cluster:
+  clusterName: bootv3-staging
+  devEnvApprovers:
+  - jstrachan
+  environmentGitOwner: jstrachan
+  gitKind: github
+  gitName: github
+  gitServer: https://github.com
+  namespace: jx
+  project: jstrachan-multicluster
+  provider: gke
+  registry: gcr.io
+  zone: europe-west1-d
+environments:
+- gitKind: github
+  gitServer: https://github.com
+  ingress:
+    domain: ""
+    externalDNS: false
+    namespaceSubDomain: ""
+    tls:
+      email: ""
+      enabled: false
+      production: false
+  key: dev
+  promotionStrategy: Manual
+  remoteCluster: true
+  repository: environment-bootv3-staging
 helmfile: true
+ingress:
+  domain: ""
+  externalDNS: false
+  namespaceSubDomain: -jx.
+  tls:
+    email: ""
+    enabled: false
+    production: false
+repository: nexus
+storage:
+  backup:
+    enabled: false
+    url: ""
+  logs:
+    enabled: false
+    url: ""
+  reports:
+    enabled: false
+    url: ""
+  repository:
+    enabled: false
+    url: ""
+vault: {}
+velero:
+  schedule: ""
+  ttl: ""
+versionStream:
+  ref: v2.0.125
+  url: ""
+webhook: lighthouse
