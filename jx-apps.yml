@@ -4,7 +4,7 @@ apps:
 - name: jenkins-x/lighthouse
 - name: jenkins-x/tekton
 - name: dev/v2-nodey
-  version: 0.0.8
+  version: 0.0.10
 - name: dev/v2-nodey3
   version: 0.0.10
 repositories:
